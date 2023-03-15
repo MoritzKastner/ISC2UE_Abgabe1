@@ -6,7 +6,37 @@
 </head>
 <body>
 <script>
+
     // TODO: Your JavaScript implementation for array extraction goes here.
+    const exampleArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const emptyArray = [];
+    function arrayExtract(array, start, length) {
+     //wenns negativ is if >0 
+     if (start<0){
+        start = 0
+    }
+     //was passsiert wenn keine parameter 
+     if (array === undefined && start === undefined && length === undefined) {
+    return emptyArray;
+    }
+	const extractedArray = [];
+    for (let i = start; i < start + length && i < array.length; i++){
+    extractedArray.push(array[i]);
+   
+    
+    }   
+    return extractedArray;
+}
+
+console.log(arrayExtract(exampleArray, 1, 4));
+console.log(arrayExtract(exampleArray, 1, 10));
+console.log(arrayExtract(exampleArray, 12, 2));
+console.log(arrayExtract(exampleArray, -5, 3));
+console.log(arrayExtract(exampleArray, -11, 2));
+console.log(arrayExtract(exampleArray, -13, 2));
+console.log(arrayExtract());
+console.log(arrayExtract(exampleArray));
+console.log(arrayExtract(exampleArray, 0));
 </script>
 </body>
 </html>
